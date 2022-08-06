@@ -8,8 +8,9 @@ import pickle
 with open('RF_model.pkl', 'rb') as f:
     rf = pickle.load(f)
 
-st.title("Signals")
-run = st.checkbox('Predict Vocals')
+st.title("SIGN LANGUAGE")
+st.image("lenguaje_signos.jpg")
+run = st.checkbox('Predict letters')
 FRAME_WINDOW = st.image([])
 cam = cv2.VideoCapture(0)
 
