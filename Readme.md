@@ -15,7 +15,7 @@
 
 ## Demo
 
-![video_readmegif](https://raw.githubusercontent.com/iremirezdeganuza72/sign_language/main/Imagenes/video_readmegif.gif)
+
 
 ## Description
 
