@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # Imagenes
-Imagenes
+/Imagenes
 
 #  Readme./Readme.mdZone.Identifier
 /Readme.mdZone.Identifier
