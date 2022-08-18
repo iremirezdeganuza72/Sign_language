@@ -15,10 +15,7 @@
 
 ## Demo
 
-![video_readmegif](https://user-images.githubusercontent.com/101796802/185381629-111f051c-38e8-40b8-b280-ab70863219af.gif)
-
 ![video_readmegif](https://raw.githubusercontent.com/iremirezdeganuza72/sign_language/main/Imagenes/video_readmegif.gif)
-
 
 ## Description
 
