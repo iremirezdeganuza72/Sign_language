@@ -18,21 +18,17 @@ data= os.listdir(data_path)
 IMAGE_FILES=[]
 X=[]
 y=[]
-#limite = 1
 for folder in data:
-  #contador=0
   sign_language= os.listdir(f"{data_path}/{folder}")
   for images in sign_language:
-    #if contador < limite:
       IMAGE_FILES.append(f"{data_path}/{folder}/{images}")
-      #contador+= 1
+#Configuration to read images of hands;
 with mp_hands.Hands(
     static_image_mode=True,
     max_num_hands=1,
     min_detection_confidence=0.5) as hands:
   for idx, file in enumerate(IMAGE_FILES):
-    # Read an image, flip it around y-axis for correct handedness output (see
-    # above).
+    # Read an image
     image = cv2.imread(file)
     # Convert the BGR image to RGB before processing.image.png
     results = hands.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
