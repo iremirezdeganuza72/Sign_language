@@ -4,14 +4,14 @@
 
 ##  Index
 
-- Description
-- Demo
-- How did I carry out the project?
-- Implementation of project
-- Dataset
-- Objectives
-- Acknowledgements
-- Authors
+- [Description](#Description)
+- [Demo](#Demo)
+- [How did I carry out the project?](#How-did-I-carry-out-the-project?)
+- [Implementation of project](#Implmentation-of-project)
+- [Dataset](#Dataset)
+- [Objectives](#Objectives)
+- [Acknowledgements](#Acknowledgements)
+- [Authors](#Authors)
 
 ## Description
 
