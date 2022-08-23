@@ -1,3 +1,4 @@
+from turtle import width
 import cv2 
 import streamlit as st
 import numpy as np 
@@ -10,13 +11,20 @@ with open('RF_model.pkl', 'rb') as f:
     rf = pickle.load(f)
     
 st.markdown("<h1 style='text-align: center; color: white;'>SIGN LANGUAGE</h1>", unsafe_allow_html=True)
-option = st.selectbox('Do you want to predict with your camera?', ["Home", 'Yes', 'No'])
+option = st.sidebar.selectbox ( 'Choose: Home, predict with your camera or predict uploading an image.' , ["Home", 'Predict with my camera', 'Upload an image'] )
 
-cam = cv2.VideoCapture(0)
-if "Home" in option:
-    st.image("lenguaje_signos_2.jpg", width=705)
-elif 'Yes' in option:
-    run="Yes"
+if option=="Home":
+    option_2= st.sidebar.selectbox( 'What kind of let1ter do you want to predict?', [ "SUMMARY", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "K", "Y", "Z" ] )
+
+    if option_2:
+        st.image(f"{option_2}.jpg",  width=705)
+    
+
+elif option=='Predict with my camera':
+    st.image([])
+    st.subheader("")
+    cam = cv2.VideoCapture(0)
+    run=True
     FRAME_WINDOW = st.image([])
     while run:
         ret, frame = cam.read()
@@ -33,9 +41,16 @@ elif 'Yes' in option:
         frame = cv2.putText(frame, letter, position, font, 
                         fontScale, color, thickness, cv2.LINE_AA)
         FRAME_WINDOW.image(frame)
-elif 'No' in option: 
-    st.subheader("Maybe next time!!!")
-    cam.release()
-    cv2.destroyAllWindows()
 
-
+elif option == 'Upload an image':
+    frame = st.file_uploader("Upload Image", type=["jpg", "jpeg", "png", "gif", "tiff", "bmp"])
+    if frame is not None:
+        file_bytes = np.asarray(bytearray(frame.read())).astype(np.uint8)
+        image = cv2.imdecode(file_bytes, 1)
+        data = img_live(image)
+        data = np.array(data)
+        y_pred = rf.predict(data.reshape(-1,63))
+        st.image(frame)
+        st.subheader(f'The sign is a {y_pred[0]}')
+    else:
+        st.write("No Image Selected")
