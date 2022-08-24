@@ -21,7 +21,8 @@ Sign language is a project in which a Machine Learning model recognizes hand ges
 
 ## Demo
 
-![video_2](https://raw.githubusercontent.com/iremirezdeganuza72/sign_language/main/Imagenes/Video_2.gif) ![video_3](https://raw.githubusercontent.com/iremirezdeganuza72/sign_language/main/Imagenes/Video_3.gif)
+![video_2](https://raw.githubusercontent.com/iremirezdeganuza72/sign_language/main/Imagenes/Video_2.gif) 
+![video_3](https://raw.githubusercontent.com/iremirezdeganuza72/sign_language/main/Imagenes/Video_3.gif)
 
 
 ## How did I carry out the project?
