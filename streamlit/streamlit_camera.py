@@ -9,17 +9,19 @@ from PIL import Image
 # load model
 with open('RF_model.pkl', 'rb') as f:
     rf = pickle.load(f)
-    
+
+# Title & selectbox to choose the different options
 st.markdown("<h1 style='text-align: center; color: white;'>SIGN LANGUAGE</h1>", unsafe_allow_html=True)
 option = st.sidebar.selectbox ( 'Choose: Home, predict with your camera or predict uploading an image.' , ["Home", 'Predict with my camera', 'Upload an image'] )
 
+#First option: Home (you can see different images)
 if option=="Home":
     option_2= st.sidebar.selectbox( 'What kind of let1ter do you want to predict?', [ "SUMMARY", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "K", "Y", "Z" ] )
 
     if option_2:
         st.image(f"{option_2}.jpg",  width=705)
     
-
+#Second option: Prediction with the camera
 elif option=='Predict with my camera':
     st.image([])
     st.subheader("")
@@ -42,6 +44,7 @@ elif option=='Predict with my camera':
                         fontScale, color, thickness, cv2.LINE_AA)
         FRAME_WINDOW.image(frame)
 
+#Third option: Upload an image
 elif option == 'Upload an image':
     frame = st.file_uploader("Upload Image", type=["jpg", "jpeg", "png", "gif", "tiff", "bmp"])
     if frame is not None:
